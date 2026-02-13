@@ -6,18 +6,20 @@ import { ChevronRight } from "lucide-react";
 
 interface JourneyProps {
     onComplete: () => void;
+    to: string;
+    from: string;
 }
 
-const steps = [
-    "Hi Rasini...",
-    "I wanted to ask you something special...",
-    "We've shared so many beautiful moments...",
-    "And every day with you is a gift.",
-    "So...",
-    "Are you ready?",
-];
+export default function Journey({ onComplete, to, from }: JourneyProps) {
+    const steps = [
+        `Hi ${to || "Rasini"}...`,
+        "I wanted to ask you something special...",
+        "We've shared so many beautiful moments...",
+        "And every day with you is a gift.",
+        "So...",
+        "Are you ready?",
+    ];
 
-export default function Journey({ onComplete }: JourneyProps) {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNext = () => {

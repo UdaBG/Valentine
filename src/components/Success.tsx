@@ -7,9 +7,12 @@ import { motion } from "framer-motion";
 
 interface SuccessProps {
     onRestart: () => void;
+    to: string;
+    from: string;
+    customMessage?: string;
 }
 
-export default function Success({ onRestart }: SuccessProps) {
+export default function Success({ onRestart, to, from, customMessage }: SuccessProps) {
     useEffect(() => {
         const duration = 15 * 1000;
         const animationEnd = Date.now() + duration;
@@ -71,7 +74,8 @@ export default function Success({ onRestart }: SuccessProps) {
                 </div>
 
                 <p className="text-xl md:text-3xl text-rose-800 font-medium shrink-0 pb-4">
-                    See you soon babe 🍆💦😏
+                    {customMessage || "See you soon babe 🍆💦😏"} <br />
+                    <span className="text-lg mt-2 block">- {from || "Your Valentine"}</span>
                 </p>
             </motion.div>
 
