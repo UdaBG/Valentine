@@ -25,6 +25,7 @@ const noTexts = [
     "Wouldn't you reconsider? 🌥️",
     "Is that your final answer? 🗿",
     "You're breaking my heart ;( 💔",
+    "JUST CLICK YES! 😤😒",
 ];
 
 export default function Proposal({ onSuccess }: ProposalProps) {
